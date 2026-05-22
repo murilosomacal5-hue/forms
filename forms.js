@@ -15,12 +15,6 @@ function validarEmail(email){
     return true;
 }
 
-
-
-
-
-
-
 function validarEmail(email) {
      return email.includes('@') && email.includes('.');
 }
