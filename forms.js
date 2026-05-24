@@ -1,21 +1,36 @@
-const form = document.getElementById("form");
+const form = document.querySelector(".form");
 const email = document.getElementById("email");
-const senha = document.getElementById("password");
+const senha = document.getElementById("senha");
 const botao = document.getElementById("botao");
 
 const emailFixo = "admin@gmail.com";
 const senhaFixa = "12345";
 
-function validarEmail(email){
-    if (email === '' || email === null || email === undefined){
-        console.log('Erro: Campo obrigatório');
-        return false;
-    }
-    console.log('Campo válido');
-    return true;
+
+function validarEmail(emailDigitado) {
+    return emailDigitado.includes("@") && emailDigitado.includes(".");
 }
 
-function validarEmail(email) {
-     return email.includes('@') && email.includes('.');
-}
-    
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const valorEmail = email.value;
+    const valorSenha = senha.value;
+
+    if (valorEmail === "" || valorSenha === "") {
+        alert("Preencha todos os campos!");
+        return;
+    }
+
+    if (!validarEmail(valorEmail)) {
+        alert("Digite um email válido!");
+        return;
+    }
+
+    if (valorEmail === emailFixo && valorSenha === senhaFixa) {
+        alert("Login realizado com sucesso!");
+    } else {
+        alert("Email ou senha incorretos!");
+    }
+});
