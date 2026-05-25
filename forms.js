@@ -31,6 +31,6 @@ form.addEventListener("submit", function(event) {
     if (valorEmail === emailFixo && valorSenha === senhaFixa) {
         alert("Login realizado com sucesso!");
     } else {
-        alert("autodestruição iniciada");
+        alert("email ou senha incorretos, autodestruição iniciada");
     }
 });
