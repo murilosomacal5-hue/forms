@@ -6,7 +6,6 @@ const botao = document.getElementById("botao");
 const emailFixo = "admin@gmail.com";
 const senhaFixa = "12345";
 
-
 function validarEmail(emailDigitado) {
     return emailDigitado.includes("@") && emailDigitado.includes(".");
 }
